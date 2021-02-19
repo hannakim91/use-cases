@@ -3,7 +3,8 @@ import React from 'react';
 const Sentence = (props) => {
   return (
     <div>
-    sentence {props.email}
+    sentence 
+    {props.userSelections.role ? props.userSelections.role : ''}
     </div>
   )
 }

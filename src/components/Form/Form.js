@@ -16,7 +16,7 @@ const Form = (props) => (
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 6));
-          props.saveRole(values.role)
+          props.saveSelections(values)
           setSubmitting(false);
           // part of Formik component 
             // eg loading... 

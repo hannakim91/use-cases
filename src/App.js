@@ -18,17 +18,17 @@ import Sentence from './components/Sentence'
 // 4) request submitted view / user feedback
 
 function App() {
-  const [role, setRole] = useState('')
+  const [userSelections, setUserSelections] = useState({})
 
-  const saveRole = (role) => {
+  const saveSelections = (values) => {
     console.log('hi')
-    setRole(role)
+    setUserSelections(values)
   }
 
   return (
     <div className="App">
-      <Form saveRole={saveRole}/>
-      <Sentence role={role}/>
+      <Form saveSelections={saveSelections}/>
+      <Sentence userSelections={userSelections}/>
     </div>
   );
 }
