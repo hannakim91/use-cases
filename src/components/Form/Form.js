@@ -5,11 +5,11 @@ const Form = (props) => (
   <div>
     <h1>Anywhere in your app!</h1>
     <Formik
-      initialValues={{ role: '', password: '' }}
+      initialValues={{ role: '', businessType: '' }}
       validate={values => {
         const errors = {};
-        if (!values.role) {
-          errors.role = 'Required';
+        if (!values.role || !values.businessType) {
+          errors.role = 'All inputs required';
         } 
         return errors;
       }}
@@ -43,13 +43,13 @@ const Form = (props) => (
           />
           {errors.role && touched.role && errors.role}
           <input
-            type="password"
-            name="password"
+            type="businessType"
+            name="businessType"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.password}
+            value={values.businessType}
           />
-          {errors.password && touched.password && errors.password}
+          {errors.businessType && touched.businessType && errors.businessType}
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>
