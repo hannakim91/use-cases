@@ -40,6 +40,7 @@ const Form = (props) => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.role}
+            placeholder="role"
           />
           {errors.role && touched.role && errors.role}
           <input
@@ -48,6 +49,7 @@ const Form = (props) => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.businessType}
+            placeholder="business type"
           />
           {errors.businessType && touched.businessType && errors.businessType}
           <input
@@ -56,6 +58,7 @@ const Form = (props) => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.productName}
+            placeholder="product name"
           />
           {errors.productName && touched.productName && errors.productName}
           <input
@@ -64,6 +67,7 @@ const Form = (props) => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.triggerEvent}
+            placeholder="trigger/event"
           />
           {errors.triggerEvent && touched.triggerEvent && errors.triggerEvent}
           <input
@@ -72,6 +76,7 @@ const Form = (props) => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.useCase}
+            placeholder="usecase"
           />
           {errors.useCase && touched.useCase && errors.useCase}
           <button type="submit" disabled={isSubmitting}>
