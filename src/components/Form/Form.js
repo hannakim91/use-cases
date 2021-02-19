@@ -5,22 +5,22 @@ const Form = (props) => (
   <div>
     <h1>Anywhere in your app!</h1>
     <Formik
-      initialValues={{ email: '', password: '' }}
+      initialValues={{ role: '', password: '' }}
       validate={values => {
         const errors = {};
-        if (!values.email) {
-          errors.email = 'Required';
+        if (!values.role) {
+          errors.role = 'Required';
         } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.role)
         ) {
-          errors.email = 'Invalid email address';
+          errors.role = 'Invalid role address';
         }
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
-          props.saveEmail(values.email)
+          props.saveRole(values.role)
           setSubmitting(false);
           // part of Formik component 
             // eg loading... 
@@ -39,13 +39,13 @@ const Form = (props) => (
       }) => (
         <form onSubmit={handleSubmit}>
           <input
-            type="email"
-            name="email"
+            type="role"
+            name="role"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.email}
+            value={values.role}
           />
-          {errors.email && touched.email && errors.email}
+          {errors.role && touched.role && errors.role}
           <input
             type="password"
             name="password"

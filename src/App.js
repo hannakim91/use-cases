@@ -18,17 +18,17 @@ import Sentence from './components/Sentence'
 // 4) request submitted view / user feedback
 
 function App() {
-  const [email, setEmail] = useState('')
+  const [role, setRole] = useState('')
 
-  const saveEmail = (email) => {
+  const saveRole = (role) => {
     console.log('hi')
-    setEmail(email)
+    setRole(role)
   }
 
   return (
     <div className="App">
-      <Form saveEmail={saveEmail}/>
-      <Sentence email={email}/>
+      <Form saveRole={saveRole}/>
+      <Sentence role={role}/>
     </div>
   );
 }
