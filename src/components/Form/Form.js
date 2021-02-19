@@ -10,11 +10,7 @@ const Form = (props) => (
         const errors = {};
         if (!values.role) {
           errors.role = 'Required';
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.role)
-        ) {
-          errors.role = 'Invalid role address';
-        }
+        } 
         return errors;
       }}
       onSubmit={(values, { setSubmitting }) => {
