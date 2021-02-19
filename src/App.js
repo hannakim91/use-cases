@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Form from './components/Form'
+import Sentence from './components/Sentence'
+
+// Form component - make files
+  // put Formik form inside
+
+
+// separate component for completed paragraph? 
+// validation library and formik for forms
+  // how to get input values from Form to Sentence
+
+// 3) route to different page (ideally) for RFP preview 
+  // submit button
+  // edit answers button to go back to previous page
+
+// 4) request submitted view / user feedback
 
 function App() {
+  const [email, setEmail] = useState('')
+
+  const saveEmail = (email) => {
+    console.log('hi')
+    setEmail(email)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form saveEmail={saveEmail}/>
+      <Sentence email={email}/>
     </div>
   );
 }
