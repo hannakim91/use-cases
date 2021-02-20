@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Form from './components/Form';
 import Sentence from './components/Sentence';
+import { postSentence } from "./apiCalls"
 
 // Form component - make files
   // put Formik form inside
 
 // separate component for completed paragraph? 
 // validation library and formik for forms
-  // how to get input values from Form to Sentence
+  // how to get input userSelections from Form to Sentence
 
 // 3) route to different page (ideally) for RFP preview 
   // submit button
@@ -20,10 +21,20 @@ import Sentence from './components/Sentence';
 function App() {
   const [userSelections, setUserSelections] = useState({})
 
-  const saveSelections = (values) => {
+  const saveSelections = (userSelections) => {
     console.log('hi')
-    setUserSelections(values)
+    setUserSelections(userSelections)
   }
+
+  const addSentence = async (sentence) => {
+    try {
+      const addSentence = await postSentence(sentence)
+      console.log(addSentence)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
 
   return (
     <div className="App">
@@ -35,7 +46,7 @@ function App() {
           exact path='/form'
           render={() => (
             <>
-              <Form saveSelections={saveSelections}/>
+              <Form saveSelections={saveSelections} addSentence={addSentence}/>
               <Sentence userSelections={userSelections}/>
             </>
           )}

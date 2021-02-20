@@ -10,13 +10,15 @@ const Form = (props) => (
     <Formik
       initialValues={{ role: '', businessType: '', productName: '', triggerEvent: '', useCase: ''}}
   
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={async (values, { setSubmitting }) => {
         // don't think i need set timeout but instead API call eventually
-        setTimeout(() => {
+        const sentence = {text: `${values.role} at ${values.businessType} use ${values.productName} when ${values.triggerEvent} in order to ${values.useCase}`}
+        await setTimeout(() => {
           props.saveSelections(values)
+          props.addSentence(sentence)
           setSubmitting(false);
           // part of Formik component 
-            // eg loading... 
+          // eg loading... 
         }, 400);
         // history.push('/summary')
       }}
