@@ -59,14 +59,20 @@ const Form = ({ saveSelections, addSentence }) => (
             <option value="Intern">Intern</option>
           </Field>
           {errors.role && touched.role && errors.role}
-          <input
-            type="businessType"
+          <Field 
+            as="select"
             name="businessType"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.businessType}
-            placeholder="business type"
-          />
+            placeholder="businessType"
+          >
+            <option defaultValue>Business Type</option>
+            <option value="Law Firm">Law Firm</option>
+            <option value="Paralegal">In-house Legal Dept</option>
+            <option value="Compliance Specialist">Government Agency</option>
+            <option value="Mediator">Solo Practitioner</option>
+          </Field>
           {errors.businessType && touched.businessType && errors.businessType}
           <input
             type="productName"
