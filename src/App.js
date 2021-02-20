@@ -47,7 +47,7 @@ function App() {
           render={() => (
             <>
               <Form saveSelections={saveSelections} addSentence={addSentence}/>
-              <Sentence userSelections={userSelections}/>
+              {userSelections.role && <Sentence userSelections={userSelections}/>}
             </>
           )}
         >
