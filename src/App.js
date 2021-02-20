@@ -1,11 +1,11 @@
 import './App.css';
 import React, { useState } from 'react';
-import Form from './components/Form'
-import Sentence from './components/Sentence'
+import { Switch, Route } from 'react-router-dom';
+import Form from './components/Form';
+import Sentence from './components/Sentence';
 
 // Form component - make files
   // put Formik form inside
-
 
 // separate component for completed paragraph? 
 // validation library and formik for forms
@@ -27,8 +27,25 @@ function App() {
 
   return (
     <div className="App">
-      <Form saveSelections={saveSelections}/>
-      <Sentence userSelections={userSelections}/>
+      <header>
+        <h1>Use Case Builder</h1>
+      </header>
+      <Switch>
+        <Route
+          exact path='/form'
+          render={() => (
+            <Form saveSelections={saveSelections}/>
+          )}
+        >
+        </Route>
+        <Route
+          exact path='/summary'
+          render={() => (
+            <Sentence userSelections={userSelections}/>
+          )}
+        >  
+        </Route>
+      </Switch>
     </div>
   );
 }

@@ -3,14 +3,14 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 
 const Form = (props) => (
-  <div>
-    <h1>Form</h1>
+  <>
+    <h2>Form</h2>
     <Formik
       initialValues={{ role: '', businessType: '', productName: '', triggerEvent: '', useCase: ''}}
   
       onSubmit={(values, { setSubmitting }) => {
+        // don't think i need set timeout but instead API call eventually
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 6));
           props.saveSelections(values)
           setSubmitting(false);
           // part of Formik component 
@@ -86,12 +86,12 @@ const Form = (props) => (
             Submit
           </button>
           <pre>
-            {values.role ? values.role : '[LEGAL PROFESSIONAL]'} at {values.businessType ? values.businessType : '[BUSINESS TYPE]'} use {values.productName ? values.productName : '[PRODUCT NAME'} when {values.triggerEvent ? values.triggerEvent: '[TRIGGER/EVENT]'} in order to {values.useCase ? values.useCase : '[USE CASE]'}.
+            {values.role ? values.role : '[LEGAL PROFESSIONAL]'} at {values.businessType ? values.businessType : '[BUSINESS TYPE]'} use {values.productName ? values.productName : '[PRODUCT NAME]'} when {values.triggerEvent ? values.triggerEvent: '[TRIGGER/EVENT]'} in order to {values.useCase ? values.useCase : '[USE CASE]'}.
           </pre>
         </form>
       )}
     </Formik>
-  </div>
+  </>
 );
 
 export default Form;

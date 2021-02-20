@@ -1,5 +1,8 @@
 import React from 'react';
 
+//should be separate page view after submit button
+// have a back button to go back to form page
+
 const Sentence = ({ userSelections }) => {
   return (
     <div>
