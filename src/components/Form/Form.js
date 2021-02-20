@@ -1,10 +1,10 @@
 import React from 'react';
-import { useHistory } from "react-router";
-import { Formik } from 'formik';
+import { Switch, Route, useHistory } from 'react-router-dom';
+import { Field,Formik } from 'formik';
 import * as yup from 'yup';
 
-const Form = (props) => (
-  // const history = useHistory();
+const Form = ({ saveSelections, addSentence }) => (
+
   <>
     <h2>Form</h2>
     <Formik
@@ -14,12 +14,13 @@ const Form = (props) => (
         // don't think i need set timeout but instead API call eventually
         const sentence = {text: `${values.role} at ${values.businessType} use ${values.productName} when ${values.triggerEvent} in order to ${values.useCase}`}
         await setTimeout(() => {
-          props.saveSelections(values)
-          props.addSentence(sentence)
+          saveSelections(values)
+          addSentence(sentence)
           setSubmitting(false);
           // part of Formik component 
           // eg loading... 
         }, 400);
+        // const history = useHistory();
         // history.push('/summary')
       }}
 
@@ -42,14 +43,21 @@ const Form = (props) => (
         /* and other goodies */
       }) => (
         <form onSubmit={handleSubmit}>
-          <input
-            type="role"
+          <Field 
+            as="select"
             name="role"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.role}
             placeholder="role"
-          />
+          >
+            <option defaultValue>Role</option>
+            <option value="Lawyer">Lawyer</option>
+            <option value="Paralegal">Paralegal</option>
+            <option value="Compliance Specialist">Compliance Specialist</option>
+            <option value="Mediator">Mediator</option>
+            <option value="Intern">Intern</option>
+          </Field>
           {errors.role && touched.role && errors.role}
           <input
             type="businessType"

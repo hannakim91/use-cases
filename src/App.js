@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import Form from './components/Form';
 import Sentence from './components/Sentence';
 import { postSentence } from "./apiCalls"
