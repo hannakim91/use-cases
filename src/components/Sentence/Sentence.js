@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Sentence = ({ role, businessType, productName, triggerEvent, useCase }) => {
+const Sentence = ({ userSelections }) => {
   return (
     <div>
       <h2>Use Case</h2>
       <p>
-      {role ? role : '[LEGAL PROFESSIONAL]'} at 
-      {businessType ? businessType : '[BUSINESS TYPE]'}
+      {userSelections.role ? userSelections.role : '[LEGAL PROFESSIONAL]'} at {userSelections.businessType ? userSelections.businessType : '[BUSINESS TYPE]'} use {userSelections.productName ? userSelections.productName : '[PRODUCT NAME'} when {userSelections.triggerEvent ? userSelections.triggerEvent: '[TRIGGER/EVENT]'} in order to {userSelections.useCase ? userSelections.useCase : '[USE CASE]'}.
       </p> 
       
     </div>
