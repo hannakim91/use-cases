@@ -1,8 +1,10 @@
 import React from 'react';
+import { useHistory } from "react-router";
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
 const Form = (props) => (
+  // const history = useHistory();
   <>
     <h2>Form</h2>
     <Formik
@@ -16,6 +18,7 @@ const Form = (props) => (
           // part of Formik component 
             // eg loading... 
         }, 400);
+        // history.push('/summary')
       }}
 
       validationSchema={yup.object().shape({

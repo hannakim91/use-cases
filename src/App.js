@@ -34,7 +34,10 @@ function App() {
         <Route
           exact path='/form'
           render={() => (
-            <Form saveSelections={saveSelections}/>
+            <>
+              <Form saveSelections={saveSelections}/>
+              <Sentence userSelections={userSelections}/>
+            </>
           )}
         >
         </Route>
