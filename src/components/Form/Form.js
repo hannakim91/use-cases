@@ -7,13 +7,7 @@ const Form = (props) => (
     <h1>Form</h1>
     <Formik
       initialValues={{ role: '', businessType: '', productName: '', triggerEvent: '', useCase: ''}}
-      // validate={values => {
-      //   const errors = {};
-      //   if (!values.role || !values.businessType || !values.productName || !values.triggerEvent || !values.useCase) {
-      //     errors.role = 'All inputs required';
-      //   } 
-      //   return errors;
-      // }}
+  
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 6));
@@ -85,12 +79,15 @@ const Form = (props) => (
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.useCase}
-            placeholder="usecase"
+            placeholder="use case"
           />
           {errors.useCase && touched.useCase && errors.useCase}
           <button type="submit" disabled={isSubmitting}>
             Submit
           </button>
+          <pre>
+            {values.role ? values.role : '[LEGAL PROFESSIONAL]'} at {values.businessType ? values.businessType : '[BUSINESS TYPE]'} use {values.productName ? values.productName : '[PRODUCT NAME'} when {values.triggerEvent ? values.triggerEvent: '[TRIGGER/EVENT]'} in order to {values.useCase ? values.useCase : '[USE CASE]'}.
+          </pre>
         </form>
       )}
     </Formik>
