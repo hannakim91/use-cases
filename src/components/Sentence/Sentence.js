@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 //should be separate page view after submit button
 // have a back button to go back to form page
@@ -10,7 +11,9 @@ const Sentence = ({ userSelections }) => {
       <p>
       {userSelections.role ? userSelections.role : '[LEGAL PROFESSIONAL]'} at {userSelections.businessType ? userSelections.businessType : '[BUSINESS TYPE]'} use {userSelections.productName ? userSelections.productName : '[PRODUCT NAME'} when {userSelections.triggerEvent ? userSelections.triggerEvent: '[TRIGGER/EVENT]'} in order to {userSelections.useCase ? userSelections.useCase : '[USE CASE]'}.
       </p>
-      <button>Back</button> 
+      <Link to='/form'>
+        <button>Back</button> 
+      </Link>
       <button>Submit</button>
       
     </div>
