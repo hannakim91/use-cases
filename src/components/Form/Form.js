@@ -15,7 +15,7 @@ const Form = ({ saveSelections, addSentence }) => (
         // don't think i need set timeout but instead API call eventually
         const sentence = {text: `${values.role} at ${values.businessType} use ${values.productName} when ${values.triggerEvent} in order to ${values.useCase}`}
         await setTimeout(() => {
-          saveSelections(values)
+          // saveSelections(values)
           addSentence(sentence)
           setSubmitting(false);
           // part of Formik component 

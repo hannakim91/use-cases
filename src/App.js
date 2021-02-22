@@ -25,6 +25,7 @@ function App() {
     console.log('hi')
     setUserSelections(userSelections)
   }
+  // store state of each form input in App 
 
   const addSentence = async (sentence) => {
     try {
@@ -55,7 +56,7 @@ function App() {
         <Route
           exact path='/summary'
           render={() => (
-            <Sentence userSelections={userSelections}/>
+            <Sentence userSelections={userSelections} addSentence={addSentence}/>
           )}
         >  
         </Route>
