@@ -54,7 +54,7 @@ function App() {
         >
         </Route>
         <Route
-          exact path='/summary'
+          exact path='/sentence'
           render={() => (
             <Sentence userSelections={userSelections} addSentence={addSentence}/>
           )}

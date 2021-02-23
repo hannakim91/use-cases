@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Field,Formik } from 'formik';
 import * as yup from 'yup';
 import './Form.css';
@@ -114,6 +114,9 @@ const Form = ({ saveSelections, addSentence }) => (
         </form>
       )}
     </Formik>
+    <Link to="/sentence">
+      <button>Next</button>
+    </Link>
   </div>
 );
 

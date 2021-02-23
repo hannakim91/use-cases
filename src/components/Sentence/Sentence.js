@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 // have a back button to go back to form page
 
 const Sentence = ({ userSelections }) => {
+  const submitForm = () => {
+    console.log('hi')
+  }
   return (
     <div>
       <h2>Use Case</h2>
@@ -14,7 +17,7 @@ const Sentence = ({ userSelections }) => {
       <Link to='/form'>
         <button>Back</button> 
       </Link>
-      <button>Submit</button>
+      <button onClick={submitForm}>Submit</button>
       
     </div>
   )
